@@ -8,13 +8,14 @@ RUN   apk --no-cache upgrade && \
         build-base && \
       git clone https://github.com/xmrig/xmrig && \
       cd xmrig && \
+      sed -i 's/kDonateLevel = 5/kDonateLevel = 0/' src/donate.h && \
       mkdir build && \
-      cmake -DCMAKE_BUILD_TYPE=Release . && \
+      cd build && \
+      cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_HTTPD=OFF && \
       make && \
       apk del \
         build-base \
         cmake \
         git
 USER miner
-WORKDIR    /xmrig
-ENTRYPOINT  ["./xmrig"]
+ENTRYPOINT  ["/xmrig/build/xmrig"]
