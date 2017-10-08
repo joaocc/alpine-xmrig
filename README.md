@@ -1,3 +1,6 @@
+This is a fork of the original [alpine-xmrig](https://github.com/b-i-t-n/alpine-xmrig) project with an up to date build command that handles XMRig's new HTTP API feature which attempts to be included in the build by default (by disabling it) and allows, and defaults to (unavoidable), a donate level of 0%. Original README featured below.
+#
+
 # alpine-xmrig
 [XMRig miner](https://github.com/xmrig/xmrig) in an Alpine Linux Docker image.
 
