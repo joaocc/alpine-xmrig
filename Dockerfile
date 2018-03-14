@@ -2,6 +2,7 @@ FROM  alpine:latest
 RUN   adduser -S -D -H -h /xmrig miner
 RUN   apk --no-cache upgrade && \
       apk --no-cache add \
+        bash \
         git \
         cmake \
         libuv-dev \
