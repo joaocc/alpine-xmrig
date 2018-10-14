@@ -11,7 +11,7 @@ RUN   apk --no-cache upgrade && \
       cd xmrig && \
       sed -i 's/kMinimumDonateLevel = 1/kMinimumDonateLevel = 0/' src/donate.h && \
       sed -i 's/kDefaultDonateLevel = 5/kDefaultDonateLevel = 0/' src/donate.h && \
-      cmake -DCMAKE_BUILD_TYPE=Release -DWITH_HTTPD=OFF && \
+      cmake -DCMAKE_BUILD_TYPE=Release -DWITH_HTTPD=OFF -DWITH_TLS=OFF && \
       make
 
 FROM  alpine:latest
