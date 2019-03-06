@@ -17,7 +17,7 @@ RUN   apk --no-cache upgrade && \
 
 FROM  alpine:latest
 RUN   adduser -S -D -H -h /xmrig miner
-COPY --from=build /xmrig/xmrig/xmrig /xmrig/xmrig
+COPY --from=build /xmrig/xmrig/xmrig-notls /xmrig/xmrig
 USER miner
 WORKDIR /xmrig
 ENTRYPOINT  ["./xmrig"]
